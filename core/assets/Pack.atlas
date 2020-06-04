@@ -1,0 +1,15 @@
+
+Pack.png
+size: 256,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Button
+  rotate: false
+  xy: 2, 2
+  size: 140, 70
+  split: 0, 0, 0, 0
+  pad: 20, 20, 5, 5
+  orig: 140, 70
+  offset: 0, 0
+  index: -1

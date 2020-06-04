@@ -48,7 +48,7 @@ public abstract class AbstractScreen implements Screen {
     public void show() {}
 
     private void clearScreen(){
-        Gdx.gl.glClearColor(0, 0, 0, 0);
+        Gdx.gl.glClearColor(30/255f, 31/255f, 38/255f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     }
 
@@ -64,6 +64,8 @@ public abstract class AbstractScreen implements Screen {
 
     @Override
     public void dispose() {
+        stage.dispose();
+        spriteBatch.dispose();
         game.dispose();
     }
 
