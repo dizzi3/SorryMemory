@@ -1,5 +1,6 @@
 package Screens;
 
+import Listeners.MenuButtonListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -42,6 +43,7 @@ public class MenuScreen extends AbstractScreen{
         startGameButtonStyle.fontColor = Color.BLACK;
         startGameButtonStyle.up = new NinePatchDrawable(skin.getPatch("Button"));
         startGameButton = new TextButton("START GAME", startGameButtonStyle);
+        startGameButton.addListener(new MenuButtonListener());
     }
 
     private void initializeFont(){
@@ -63,6 +65,7 @@ public class MenuScreen extends AbstractScreen{
     public void render(float delta) {
         super.render(delta);
 
+        stage.act();
         stage.draw();
     }
 

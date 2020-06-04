@@ -48,7 +48,7 @@ public abstract class AbstractScreen implements Screen {
     public void show() {}
 
     private void clearScreen(){
-        Gdx.gl.glClearColor(30/255f, 31/255f, 38/255f, 1);
+        Gdx.gl.glClearColor(77/255f, 100/255f, 141/255f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     }
 

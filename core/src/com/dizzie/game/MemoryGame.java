@@ -10,8 +10,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MemoryGame extends Game {
 
-	public static final int WIDTH = 480;
-	public static final int HEIGHT = 700;
+	public static final int WIDTH = 1366;
+	public static final int HEIGHT = 768;
 
 	private boolean paused;
 
