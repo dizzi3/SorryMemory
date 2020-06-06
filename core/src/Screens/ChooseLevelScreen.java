@@ -1,11 +1,16 @@
 package Screens;
 
+import Listeners.ChooseLevelButtonListener;
 import Styles.DefaultButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.dizzie.game.MemoryGame;
 
 public class ChooseLevelScreen extends AbstractScreen{
+
+    private static final int LVL_EASY_TILES = 12;
+    private static final int LVL_MEDIUM_TILES = 18;
+    private static final int LVL_HARD_TILES = 24;
 
     private Table table;
 
@@ -24,9 +29,13 @@ public class ChooseLevelScreen extends AbstractScreen{
     }
 
     private void initializeButtons() {
-        lvlEasyButton = new TextButton("Easy - 12 pairs", new DefaultButtonStyle());
-        lvlMediumButton = new TextButton("Medium - 18 pairs", new DefaultButtonStyle());
-        lvlHardButton = new TextButton("Hard - 24 pairs", new DefaultButtonStyle());
+        lvlEasyButton = new TextButton("Easy - " + LVL_EASY_TILES + " pairs", new DefaultButtonStyle());
+        lvlMediumButton = new TextButton("Medium - " + LVL_MEDIUM_TILES + " pairs", new DefaultButtonStyle());
+        lvlHardButton = new TextButton("Hard - " + LVL_HARD_TILES + " pairs", new DefaultButtonStyle());
+
+        lvlEasyButton.addListener(new ChooseLevelButtonListener(game, LVL_EASY_TILES));
+        lvlMediumButton.addListener(new ChooseLevelButtonListener(game, LVL_MEDIUM_TILES));
+        lvlHardButton.addListener(new ChooseLevelButtonListener(game, LVL_HARD_TILES));
     }
 
     private void initializeTable(){
