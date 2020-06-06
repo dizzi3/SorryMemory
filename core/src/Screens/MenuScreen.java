@@ -35,13 +35,14 @@ public class MenuScreen extends AbstractScreen{
         initializeFont();
         skin = new Skin();
 
-        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("Pack.atlas"));
+        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("packed/MainMenuButtons.atlas"));
         skin.addRegions(atlas);
 
         startGameButtonStyle = new TextButton.TextButtonStyle();
         startGameButtonStyle.font = font;
         startGameButtonStyle.fontColor = Color.BLACK;
-        startGameButtonStyle.up = new NinePatchDrawable(skin.getPatch("Button"));
+        startGameButtonStyle.up = new NinePatchDrawable(skin.getPatch("button_"));
+        startGameButtonStyle.over = new NinePatchDrawable(skin.getPatch("button_hover"));
         startGameButton = new TextButton("START GAME", startGameButtonStyle);
         startGameButton.addListener(new MenuButtonListener());
     }

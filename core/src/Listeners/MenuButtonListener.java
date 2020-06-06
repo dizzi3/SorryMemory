@@ -15,7 +15,7 @@ public class MenuButtonListener extends ClickListener {
         super.enter(event, x, y, pointer, fromActor);
 
         Pixmap pm = new Pixmap(Gdx.files.internal("other/hand_cursor.png"));
-        Gdx.graphics.setCursor(Gdx.graphics.newCursor(pm, 13, 1));
+        Gdx.graphics.setCursor(Gdx.graphics.newCursor(pm, 8, 0));
         pm.dispose();
     }
 
