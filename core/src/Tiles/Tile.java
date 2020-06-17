@@ -1,5 +1,6 @@
 package Tiles;
 
+import Listeners.TileClickListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -12,8 +13,13 @@ public class Tile extends ImageButton {
 
     public Tile(Texture texture) {
         //super(new TextureRegionDrawable(COVERED_TEXTURE));
+
+        //TODO: DELETE THIS AND UNCOMMENT THE SUPPER ABOVE
         super(new TextureRegionDrawable(texture));
+
+
         this.texture = texture;
+        addListener(new TileClickListener());
     }
 
     public Texture getTexture(){
