@@ -4,7 +4,7 @@ import Screens.ChooseLevelScreen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class StartGameButtonListener extends MenuButtonListener{
+public class StartGameButtonListener extends HandCursorListener {
 
     private MemoryGame game;
 

@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
-public abstract class MenuButtonListener extends ClickListener {
+public abstract class HandCursorListener extends ClickListener {
 
     @Override
     public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {

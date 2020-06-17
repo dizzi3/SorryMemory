@@ -4,7 +4,7 @@ import Screens.GameScreen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class ChooseLevelButtonListener extends MenuButtonListener{
+public class ChooseLevelButtonListener extends HandCursorListener {
 
     private int nOfTiles;
     private MemoryGame game;
