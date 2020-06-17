@@ -1,14 +1,19 @@
 package Screens;
 
+import Listeners.AuthorsListener;
 import Listeners.StartGameButtonListener;
 import Styles.DefaultButtonStyle;
+import Styles.GameNameLabel;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.dizzie.game.MemoryGame;
 
 public class MenuScreen extends AbstractScreen{
 
+    private Label gameNameLabel;
     private TextButton startGameButton;
+    private TextButton authorsButton;
 
     private Table table;
 
@@ -18,20 +23,32 @@ public class MenuScreen extends AbstractScreen{
 
     @Override
     protected void init() {
+        initializeLabel();
         initializeButtons();
         initializeTable();
+    }
+
+    private void initializeLabel() {
+        gameNameLabel = new Label("SORRY MEMORY", new GameNameLabel());
     }
 
     private void initializeButtons() {
         startGameButton = new TextButton("START GAME", new DefaultButtonStyle());
         startGameButton.addListener(new StartGameButtonListener(game));
-    }
 
+        authorsButton = new TextButton("ABOUT AUTHORS", new DefaultButtonStyle());
+        authorsButton.addListener(new AuthorsListener(game));
+    }
 
     private void initializeTable(){
         table = new Table();
+        table.moveBy(0, 50);
         table.setFillParent(true);
-        table.add(startGameButton);
+        table.add(gameNameLabel).padBottom(100);
+        table.row();
+        table.add(startGameButton).padBottom(38);
+        table.row();
+        table.add(authorsButton);
         stage.addActor(table);
     }
 

@@ -54,7 +54,12 @@ public class GameScreen extends AbstractScreen{
 
     private void initializeTiles(){
         for(int i = 0; i < tiles.length; i++){
-            tiles[i] = new ImageButton(new TextureRegionDrawable(coveredTileTexture));
+            //tiles[i] = new ImageButton(new TextureRegionDrawable(coveredTileTexture));
+            if(i < 12)
+                tiles[i] = new ImageButton(new TextureRegionDrawable(tileTextures.get(i)));
+            else
+                tiles[i] = new ImageButton(new TextureRegionDrawable(tileTextures.get(i - 12)));
+
             table.add(tiles[i]).padRight(30).padBottom(30);
 
             if((i+1) % 6 == 0)
