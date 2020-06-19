@@ -57,6 +57,7 @@ public class TileClickListener extends ClickListener {
                             //TODO: ADD NUMBER OF TRIES AND HIDE BOTH TEXTURES
                             lastClickedTile.changeToCoveredTexture();
                             tile.changeToCoveredTexture();
+                            gameScreen.increaseTries();
                         }
 
                         lastClickedTile = null;

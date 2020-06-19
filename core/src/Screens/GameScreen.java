@@ -1,9 +1,12 @@
 package Screens;
 
+import Styles.TriesLabelStyle;
 import Tiles.RandomTileTexture;
 import Tiles.Tile;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Align;
 import com.dizzie.game.MemoryGame;
 
 import java.util.Arrays;
@@ -14,16 +17,22 @@ public class GameScreen extends AbstractScreen{
 
     private Tile[] tiles;
     private Table table;
+    private int nTries;
+    private int currentTries = 0;
+
+    private Label triesLabel;
 
     public GameScreen(MemoryGame game, int numberOfTiles){
         super(game);
 
         tiles = new Tile[numberOfTiles];
+        nTries = numberOfTiles;
         initialize();
     }
 
     private void initialize(){
         initializeTable();
+        initializeLabels();
         initializeTiles();
     }
 
@@ -31,6 +40,21 @@ public class GameScreen extends AbstractScreen{
         table = new Table();
         table.setFillParent(true);
         stage.addActor(table);
+    }
+
+    private void initializeLabels() {
+        triesLabel = new Label("Tries: " + currentTries + "/" + nTries, new TriesLabelStyle());
+
+        int yOffset;
+        if(tiles.length == 12)
+            yOffset = 200;
+        else if(tiles.length == 18)
+            yOffset = 150;
+        else
+            yOffset = 100;
+
+        triesLabel.setPosition(MemoryGame.WIDTH / 2 - triesLabel.getWidth() / 2,MemoryGame.HEIGHT - yOffset);
+        stage.addActor(triesLabel);
     }
 
     private void initializeTiles(){
@@ -99,4 +123,18 @@ public class GameScreen extends AbstractScreen{
     protected void init() {
 
     }
+
+    public int getnTries() {
+        return nTries;
+    }
+
+    public void increaseTries(){
+        this.currentTries++;
+        triesLabel.setText("Tries: " + currentTries + "/" + nTries);
+
+        if(currentTries <= nTries){
+            //TODO: MAKE A GO TO MAIN MENU BUTTON APPEAR
+        }
+    }
+
 }
