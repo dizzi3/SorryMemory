@@ -18,9 +18,6 @@ public class Tile extends ImageButton {
     public Tile(Texture texture, GameScreen gameScreen) {
         super(new TextureRegionDrawable(COVERED_TEXTURE));
 
-        //TODO: DELETE THIS AND UNCOMMENT THE SUPPER ABOVE
-        //super(new TextureRegionDrawable(texture));
-
         this.texture = texture;
         addListener(new TileClickListener(this, gameScreen));
     }

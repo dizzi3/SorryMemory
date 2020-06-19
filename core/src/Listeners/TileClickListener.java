@@ -49,20 +49,29 @@ public class TileClickListener extends ClickListener {
 
                             lastClickedTile.setUncovered(true);
                             tile.setUncovered(true);
-                            gameScreen.increasePoints();
 
                         }else{
 
-                            //TODO: ADD NUMBER OF TRIES AND HIDE BOTH TEXTURES
                             lastClickedTile.changeToCoveredTexture();
                             tile.changeToCoveredTexture();
-                            gameScreen.increaseTries();
+
+                            lastClickedTile = null;
+                            gameScreen.undisableTiles();
+
                         }
 
                         lastClickedTile = null;
                         gameScreen.undisableTiles();
+
                     }
                 };
+
+                if(lastClickedTile != null){
+                    if(lastClickedTile.getTexture() == tile.getTexture())
+                        gameScreen.increasePoints();
+                    else
+                        gameScreen.increaseTries();
+                }
 
                 scheduler.schedule(task, 1, TimeUnit.SECONDS);
             }

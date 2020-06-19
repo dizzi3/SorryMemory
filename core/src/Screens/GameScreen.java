@@ -4,11 +4,8 @@ import Styles.TriesLabelStyle;
 import Tiles.RandomTileTexture;
 import Tiles.Tile;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Align;
 import com.dizzie.game.MemoryGame;
 
 import java.util.Arrays;
@@ -127,26 +124,18 @@ public class GameScreen extends AbstractScreen{
 
     }
 
-    public int getnTries() {
-        return nTries;
-    }
-
     public void increaseTries(){
         this.currentTries++;
         triesLabel.setText("Tries: " + currentTries + "/" + nTries);
 
-        if(currentTries >= nTries){
-            //TODO: LOST GAME, MAKE A GO TO MAIN MENU BUTTON APPEAR
-            System.out.println("YOU'vE LOST!!!!");
-        }
+        if(currentTries >= nTries)
+            game.setScreen(new EndGameScreen(game, false));
     }
 
     public void increasePoints(){
         points++;
-        if(points >= tiles.length / 2){
-            //TODO: WON GAME CONDITION
-            System.out.println("YOU'vE WON!!!!");
-        }
+        if(points >= tiles.length / 2)
+            game.setScreen(new EndGameScreen(game, true));
     }
 
 }

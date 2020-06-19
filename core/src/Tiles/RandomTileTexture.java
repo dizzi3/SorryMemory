@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class RandomTileTexture {
 
-    private static ArrayList<Integer> alreadyUsedTextureIndexes = new ArrayList<>();
+    public static ArrayList<Integer> alreadyUsedTextureIndexes = new ArrayList<>();
     private static final ArrayList<Texture> textures = new ArrayList<>(List.of(
             new Texture(Gdx.files.internal("tiles/pizza.png")),
             new Texture(Gdx.files.internal("tiles/zombie.png")),
