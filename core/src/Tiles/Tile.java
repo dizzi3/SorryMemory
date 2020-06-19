@@ -1,6 +1,7 @@
 package Tiles;
 
 import Listeners.TileClickListener;
+import Screens.GameScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -12,15 +13,16 @@ public class Tile extends ImageButton {
     private Texture texture;
 
     private boolean clicked = false;
+    private boolean uncovered = false;
 
-    public Tile(Texture texture) {
+    public Tile(Texture texture, GameScreen gameScreen) {
         super(new TextureRegionDrawable(COVERED_TEXTURE));
 
         //TODO: DELETE THIS AND UNCOMMENT THE SUPPER ABOVE
         //super(new TextureRegionDrawable(texture));
 
         this.texture = texture;
-        addListener(new TileClickListener(this));
+        addListener(new TileClickListener(this, gameScreen));
     }
 
     public Texture getTexture(){
@@ -44,5 +46,13 @@ public class Tile extends ImageButton {
     public void setClicked(boolean clicked){ this.clicked = clicked; }
 
     public boolean isClicked(){ return this.clicked; }
+
+    public boolean isUncovered() {
+        return uncovered;
+    }
+
+    public void setUncovered(boolean uncovered) {
+        this.uncovered = uncovered;
+    }
 
 }

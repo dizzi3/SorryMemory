@@ -1,6 +1,8 @@
 package Listeners;
 
+import Screens.GameScreen;
 import Tiles.Tile;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -8,15 +10,19 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class TileClickListener extends ClickListener {
 
     private static Tile lastClickedTile = null;
     private Tile tile;
+    private GameScreen gameScreen;
 
-    public TileClickListener(Tile tile){
+    public TileClickListener(Tile tile, GameScreen gameScreen){
         this.tile = tile;
+        this.gameScreen = gameScreen;
     }
 
     @Override
@@ -26,36 +32,40 @@ public class TileClickListener extends ClickListener {
         if(!tile.isClicked()) {
             tile.setClicked(true);
             tile.changeToTexture();
-            System.out.println("ZMIEN SIE");
 
             if(lastClickedTile == null)
                 lastClickedTile = tile;
             else{
 
-                lastClickedTile.setDisabled(true);
-                tile.setDisabled(true);
+                gameScreen.setAllTilesDisabled();
 
-                try {
-                    TimeUnit.SECONDS.sleep(2);
-                }catch(Exception e){}
+                ScheduledExecutorService scheduler
+                        = Executors.newSingleThreadScheduledExecutor();
 
-                lastClickedTile.setDisabled(false);
-                tile.setDisabled(false);
+                Runnable task = new Runnable() {
+                    public void run() {
 
-                if(lastClickedTile.getTexture() == tile.getTexture()){
+                        if(lastClickedTile.getTexture() == tile.getTexture()){
 
-                    //WE GOT A POINT
-                    System.out.println("WE GOT A POINT!!!");
+                            //WE GOT A POINT
+                            System.out.println("WE GOT A POINT!!!");
+                            lastClickedTile.setUncovered(true);
+                            tile.setUncovered(true);
 
-                }else{
-System.out.println("HEHE");
-                    //TODO: ADD NUMBER OF TRIES AND HIDE BOTH TEXTURES
-                    lastClickedTile.changeToCoveredTexture();
-                    tile.changeToCoveredTexture();
+                        }else{
 
-                }
+                            //TODO: ADD NUMBER OF TRIES AND HIDE BOTH TEXTURES
+                            lastClickedTile.changeToCoveredTexture();
+                            tile.changeToCoveredTexture();
+                        }
 
-                lastClickedTile = null;
+                        lastClickedTile = null;
+                        gameScreen.undisableTiles();
+                    }
+                };
+
+                int delay = 2;
+                scheduler.schedule(task, delay, TimeUnit.SECONDS);
             }
         }
     }

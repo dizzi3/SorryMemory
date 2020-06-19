@@ -38,8 +38,8 @@ public class GameScreen extends AbstractScreen{
 
         do{
             Texture texture = RandomTileTexture.get();
-            tiles[getRandomEmptyTileIndex()] = new Tile(texture);
-            tiles[getRandomEmptyTileIndex()] = new Tile(texture);
+            tiles[getRandomEmptyTileIndex()] = new Tile(texture, this);
+            tiles[getRandomEmptyTileIndex()] = new Tile(texture, this);
 
         }while(isThereAnEmptyTile());
 
@@ -77,6 +77,22 @@ public class GameScreen extends AbstractScreen{
 
         stage.act();
         stage.draw();
+    }
+
+    public void setAllTilesDisabled(){
+        for(int i = 0; i < tiles.length; i++) {
+            tiles[i].setDisabled(true);
+            tiles[i].setClicked(true);
+        }
+    }
+
+    public void undisableTiles(){
+        for(int i = 0; i < tiles.length; i++) {
+            if(!tiles[i].isUncovered()) {
+                tiles[i].setDisabled(false);
+                tiles[i].setClicked(false);
+            }
+        }
     }
 
     @Override
