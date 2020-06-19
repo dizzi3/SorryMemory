@@ -19,6 +19,7 @@ public class GameScreen extends AbstractScreen{
     private Table table;
     private int nTries;
     private int currentTries = 0;
+    private int points = 0;
 
     private Label triesLabel;
 
@@ -132,8 +133,17 @@ public class GameScreen extends AbstractScreen{
         this.currentTries++;
         triesLabel.setText("Tries: " + currentTries + "/" + nTries);
 
-        if(currentTries <= nTries){
-            //TODO: MAKE A GO TO MAIN MENU BUTTON APPEAR
+        if(currentTries >= nTries){
+            //TODO: LOST GAME, MAKE A GO TO MAIN MENU BUTTON APPEAR
+            System.out.println("YOU'vE LOST!!!!");
+        }
+    }
+
+    public void increasePoints(){
+        points++;
+        if(points >= tiles.length / 2){
+            //TODO: WON GAME CONDITION
+            System.out.println("YOU'vE WON!!!!");
         }
     }
 

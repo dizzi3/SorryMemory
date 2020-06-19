@@ -47,10 +47,9 @@ public class TileClickListener extends ClickListener {
 
                         if(lastClickedTile.getTexture() == tile.getTexture()){
 
-                            //WE GOT A POINT
-                            System.out.println("WE GOT A POINT!!!");
                             lastClickedTile.setUncovered(true);
                             tile.setUncovered(true);
+                            gameScreen.increasePoints();
 
                         }else{
 
@@ -65,8 +64,7 @@ public class TileClickListener extends ClickListener {
                     }
                 };
 
-                int delay = 2;
-                scheduler.schedule(task, delay, TimeUnit.SECONDS);
+                scheduler.schedule(task, 1, TimeUnit.SECONDS);
             }
         }
     }
