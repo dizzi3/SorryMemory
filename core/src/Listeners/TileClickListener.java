@@ -73,7 +73,7 @@ public class TileClickListener extends ClickListener {
                         gameScreen.increaseTries();
                 }
 
-                scheduler.schedule(task, 1, TimeUnit.SECONDS);
+                scheduler.schedule(task, 630, TimeUnit.MILLISECONDS);
             }
         }
     }
