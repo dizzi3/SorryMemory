@@ -9,7 +9,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class MemoryGame extends Game {
+public class MemoryGame extends Game /** Główna klasa gry, posiada dwie stałe które określają rozdzielczość aplikacji.
+ Jest uruchamiana na samym starcie, odpowiada za uruchomienie soundtracku oraz zmiane ekranu na ekran menu.*/{
 
 	public static final int WIDTH = 1366;
 	public static final int HEIGHT = 768;

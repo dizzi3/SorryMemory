@@ -8,7 +8,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 
-public class DefaultButtonStyle extends TextButton.TextButtonStyle{
+public class DefaultButtonStyle extends TextButton.TextButtonStyle
+/** Styl przycisku używający czcionki zamieszczonej w folderze assets,
+ * zmieniający jej rozmiar, jak również wykorzystujący spakowany za pomocą
+ * GDX Texture Packer customowy styl przycisku */{
 
     private Skin skin;
     private TextureAtlas atlas;

@@ -9,7 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.dizzie.game.MemoryGame;
 
-public class MenuScreen extends AbstractScreen{
+public class MenuScreen extends AbstractScreen
+/** Ekran wyświetlający nazwe gry oraz przyciski do rozpoczęcia rozgrywki jak również
+ * wyświetlenia ekranu z informacjami o autorach. */{
 
     private Label gameNameLabel;
     private TextButton startGameButton;

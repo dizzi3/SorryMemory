@@ -7,7 +7,9 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
-public abstract class HandCursorListener extends ClickListener {
+public abstract class HandCursorListener extends ClickListener /** Klasa będąca Listenerem przycisku,
+ odpowiada za zmiane kursora myszy na "łapke" gdy kursor znajdzie się nad przyciskiem oraz
+ zmiane kursora na "strzałkę" gdy znajdzie się on poza przyciskiem. */ {
 
     @Override
     public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {

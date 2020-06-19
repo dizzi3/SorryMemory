@@ -4,9 +4,10 @@ import Screens.GameScreen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class ChooseLevelButtonListener extends HandCursorListener {
+public class ChooseLevelButtonListener extends HandCursorListener /** Klasa będąca Listenerem przycisku,
+ odpowiada za uruchomienie odpowiedniego trybu gry na podstawie zmiennej nOfTiles przesłanej w jej konstruktorze. */{
 
-    private int nOfTiles;
+private int nOfTiles;
     private MemoryGame game;
 
     public ChooseLevelButtonListener(MemoryGame game, int nOfTiles){

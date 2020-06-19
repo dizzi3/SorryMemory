@@ -5,7 +5,9 @@ import Tiles.RandomTileTexture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class MainMenuButtonListener extends HandCursorListener{
+public class MainMenuButtonListener extends HandCursorListener /** Klasa będąca Listenerem przycisku,
+ odpowiada za wyzerowanie użytych zmiennej przechowującej użyte wcześniej tekstury oraz
+ za uruchomienie głównego menu gry. */ {
 
     private MemoryGame game;
 

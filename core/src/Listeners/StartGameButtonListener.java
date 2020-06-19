@@ -4,7 +4,8 @@ import Screens.ChooseLevelScreen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class StartGameButtonListener extends HandCursorListener {
+public class StartGameButtonListener extends HandCursorListener /** Klasa będąca Listenerem przycisku,
+ odpowiada za uruchomienie menu pozwalającego użytkownikowi wybrać poziom trudności. */ {
 
     private MemoryGame game;
 

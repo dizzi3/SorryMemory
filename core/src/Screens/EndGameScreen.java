@@ -7,7 +7,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.dizzie.game.MemoryGame;
 
-public class EndGameScreen extends AbstractScreen{
+public class EndGameScreen extends AbstractScreen
+/** Ekran końca gry, wyświetla on informacje o wygranej lub przegranej
+ * oraz zawiera przycisk przekierowujący gracza do głównego menu gry. */{
 
     private boolean won;
     private Label label;

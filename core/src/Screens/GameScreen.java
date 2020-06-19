@@ -7,12 +7,17 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.dizzie.game.MemoryGame;
-
 import java.util.Arrays;
 import java.util.Random;
 
 
-public class GameScreen extends AbstractScreen{
+public class GameScreen extends AbstractScreen
+/** Ekran działający podczas rozgrywki, zawiera tablicę obiektów Tile które reprezentują
+ * dane przyciski. W klasie użyty jest również obiekt typu Table dzięki któremu możemy ustalić layout ekranu.
+ * Zmienna nTries, inicjowana w konstruktorze, mówi nam o ilości prób które są dostępne dla gracza.
+ * Zmienna currentTries przechowuje informacje o ilości prób które wykorzystał gracz.
+ * Zmienna points przechowuje informacje o ilości poprawnie odkrytych pól.
+ * Zmienna triesLabel odpowiada za wyświetlenie na ekranie ilości prób gracza w stosunku do ilości dostępnych prób*/{
 
     private Tile[] tiles;
     private Table table;

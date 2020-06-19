@@ -7,7 +7,11 @@ import com.sun.tools.javac.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class RandomTileTexture {
+public class RandomTileTexture
+/** Klasa przechowująca wszystkie tekstury wykorzystane w grze oraz
+ * pozwalająca na pseudolosowe pobranie pojedynczej tekstury.
+ * Przechowuje ona informacje o poprzednio pobranych teksturach tak,
+ * żeby nie wystąpiła sytuacja w której dana tekstura zostanie pobrana dwa razy*/{
 
     public static ArrayList<Integer> alreadyUsedTextureIndexes = new ArrayList<>();
     private static final ArrayList<Texture> textures = new ArrayList<>(List.of(

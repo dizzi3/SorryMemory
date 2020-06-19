@@ -7,7 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.dizzie.game.MemoryGame;
 
-public class AuthorsScreen extends AbstractScreen{
+public class AuthorsScreen extends AbstractScreen
+/** Ekran odpowiadający za wyświetlenie informacji o autorach gry. */{
 
     private Label label;
     private TextButton button;

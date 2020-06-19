@@ -7,7 +7,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-public class Tile extends ImageButton {
+public class Tile extends ImageButton
+/** Klasa opisująca pojedynczy przycisk.
+ * Ma ona statyczne pole COVERED_TEXTURE które przechowuje teksture "zakrytego" przycisku.
+ * Tekstura, która ma być wyświetlona gdy dany przycisk zostanie odkryty przesłany jest w jej konstruktorze.
+ * Posiada funkcje umożliwiające zmiane tekstur. */{
 
     private static final Texture COVERED_TEXTURE = new Texture(Gdx.files.internal("tiles/covered_tile.png"));
     private Texture texture;

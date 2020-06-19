@@ -9,7 +9,10 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.dizzie.game.MemoryGame;
 
-public abstract class AbstractScreen implements Screen {
+public abstract class AbstractScreen implements Screen
+/** Abstrakcyjna klasa która rozszerza klasę Screen. Dziedziczą po niej wszystkie ekrany wykorzystane w grze.
+ * Inicjalizowane są w niej m.in. takie obiekty jak Camera oraz Stage, a więc obiekty niezbędne
+ * dla prawidłowego działania każdego ekranu. Odpowiada ona również za czyszczenie ekranu na z góry ustalony kolor.*/{
 
     protected MemoryGame game;
 

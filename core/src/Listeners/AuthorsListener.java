@@ -4,7 +4,7 @@ import Screens.AuthorsScreen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.dizzie.game.MemoryGame;
 
-public class AuthorsListener extends HandCursorListener {
+public class AuthorsListener extends HandCursorListener /** Klasa będąca Listenerem przycisku, odpowiada za uruchomienie ekranu autorów. */ {
 
     private MemoryGame game;
 

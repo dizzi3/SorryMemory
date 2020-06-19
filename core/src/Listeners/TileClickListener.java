@@ -14,7 +14,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class TileClickListener extends ClickListener {
+public class TileClickListener extends ClickListener /** Klasa będąca Listenerem przycisku,
+ odpowiada za podjęcie dezycji co należy zrobić po kliknięciu w dany obrazek. */ {
 
     private static Tile lastClickedTile = null;
     private Tile tile;

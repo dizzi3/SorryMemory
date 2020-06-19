@@ -4,7 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
-public class GameNameLabel extends Label.LabelStyle {
+public class GameNameLabel extends Label.LabelStyle
+/** Styl do obiektu klasy Label.
+ * Klasa odpowiada za zmiane czcionki oraz jej rozmiaru. */{
 
     public GameNameLabel(){
         initializeFont();
